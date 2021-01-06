@@ -1,0 +1,3 @@
+Example 194
+3-Isobutyl-5-methyl-1-(oxetan-2-ylmethyl)-6-[(2-oxoimidazolidin-1-yl)methyl]thieno[2,3-d]pyrimidine-2,4(1H,3H)-dione (racemate)
+813 mg (1.84 mmol) of the compound from Example 243A were dissolved in 40 ml of dioxane, and 461 mg (2.76 mmol) of CDI were added. The mixture was stirred at RT for 16 h. The reaction solution was then concentrated on a rotary evaporator. The residue was dissolved in 15 ml of DMSO and this solution was purified by means of preparative HPLC (Method 14). Combination of the product fractions and freeze-drying gave 383 mg (42% of theory) of the title compound

@@ -1,0 +1,19 @@
+T0	REAGENT_CATALYST 332 337	water
+T1	OTHER_COMPOUND 450 457	aqueous
+T2	OTHER_COMPOUND 593 600	aqueous
+T3	OTHER_COMPOUND 470 481	acetic acid
+T4	YIELD_PERCENT 709 712	88%
+T5	OTHER_COMPOUND 641 659	magnesium sulphate
+T6	REAGENT_CATALYST 138 155	lithium hydroxide
+T7	OTHER_COMPOUND 613 628	sodium chloride
+T8	REAGENT_CATALYST 118 125	aqueous
+T9	TIME 395 402	2 hours
+T10	EXAMPLE_LABEL 0 4	16.8
+T11	YIELD_OTHER 701 707	400 mg
+T12	OTHER_COMPOUND 561 566	water
+T13	REACTION_PRODUCT 6 91	[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-acetic acid
+T14	SOLVENT 304 319	tetrahydrofuran
+T15	OTHER_COMPOUND 513 526	ethyl acetate
+T16	REACTION_PRODUCT 717 802	[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-acetic acid
+T17	STARTING_MATERIAL 203 291	[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-methyl acetate
+T18	TEMPERATURE 374 390	room temperature
