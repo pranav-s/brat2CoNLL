@@ -4,12 +4,15 @@ This repo contains code to convert Named entity recognition annotations in Brat 
 
 ## Usage
 
-The code assumes that all the input files i.e., *.ann and corresponding *.txt files are located in a single directory input_directory. Run the code to print the output of all annotations to the output_file.
+The code assumes that all the input files i.e., *.ann and corresponding *.txt files are located in a single directory i.e., input_directory. Run the code to print the output of all annotations to the output_file.
 
-python format_convertor.py --input_directory={input_directory} --output_file={output_file}
+    python format_convertor.py --input_directory={input_directory} --output_file={output_file}
 
-To run tests you can use the below command
+You can use the provided sample annotations to test the code
 
+To run the test use (if using pytest):
+
+    pytest tests/test_brat2conll.py
 
 The sample input annotations are taken from the sample dataset used for the CheMU 2020 NER task [1]
 

@@ -8,6 +8,7 @@ parser.add_argument(
     "--input_dir",
     dest="input_dir",
     type=str,
+    default='',
     help="Input directory where Brat annotations are stored",
 )
 
@@ -15,10 +16,9 @@ parser.add_argument(
     "--output_file",
     dest="output_file",
     type=str,
+    default='',
     help="Output file where CoNLL format annotations are saved",
 )
-
-args = parser.parse_args()
 
 class FormatConvertor:
     def __init__(self, input_dir: str, output_file: str):
@@ -117,6 +117,6 @@ class FormatConvertor:
         return file_pair_list
             
 if __name__ == '__main__':
-
+    args = parser.parse_args()
     format_convertor = FormatConvertor(args.input_dir, args.output_file)
     format_convertor.parse_text()
