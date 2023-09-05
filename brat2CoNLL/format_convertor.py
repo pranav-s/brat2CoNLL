@@ -2,6 +2,7 @@
 from os import listdir, path
 from collections import namedtuple
 import argparse
+import re
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -67,7 +68,7 @@ class FormatConvertor:
             for file_count, file_pair in enumerate(file_pair_list):
                 annotation_file, text_file = file_pair.ann, file_pair.text
                 input_annotations, text_string = self.read_input(annotation_file, text_file)
-                text_tokens = text_string.split()
+                text_tokens = re.split(r'(\s)', text_string)
                 annotation_count = 0
                 current_ann_start = input_annotations[annotation_count]["start"]
                 current_ann_end = input_annotations[annotation_count]["end"]
@@ -78,21 +79,32 @@ class FormatConvertor:
                 if file_count ==1:
                     pass
                 while i < num_tokens:
-                    if current_index != current_ann_start:
+                    if text_tokens[i] == "":
+                        i += 1
+                    elif text_tokens[i] == " ":
+                        current_index += 1
+                        i += 1
+                    elif text_tokens[i] == "\n":
+                        current_index += 1
+                        i += 1
+                    elif current_index != current_ann_start:
                         fo.write(f'{text_tokens[i]} O\n')
-                        current_index += len(text_tokens[i])+1
+                        current_index += len(text_tokens[i]) #+ 1
                         i += 1
                     else:
                         label = input_annotations[annotation_count]["label"]
                         while current_index <= current_ann_end and i < num_tokens:
-                            fo.write(f'{text_tokens[i]} {label}\n')
-                            current_index += len(text_tokens[i])+1
-                            i += 1
+                            if text_tokens[i] != " " and text_tokens[i] != "":
+                                fo.write(f'{text_tokens[i]} {label}\n')
+                                current_index += len(text_tokens[i]) #+ 1
+                                i += 1
+                            else:
+                                current_index += 1
+                                i += 1
                         annotation_count += 1
                         if annotation_count < num_annotations:
                             current_ann_start = input_annotations[annotation_count]["start"]
                             current_ann_end = input_annotations[annotation_count]["end"]
-
                 fo.write('\n')
     
     # def write_output(self):
@@ -104,7 +116,6 @@ class FormatConvertor:
         """Read multiple annotation files from a given input folder"""
         file_list = listdir(self.input_dir)
         annotation_files = sorted([file for file in file_list if file.endswith('.ann')])
-        # print(annotation_files)
         file_pair_list = []
         file_pair = namedtuple('file_pair', ['ann', 'text'])
         # The folder is assumed to contain *.ann and *.txt files with the 2 files of a pair having the same file name
